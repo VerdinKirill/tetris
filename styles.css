@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background: linear-gradient(135deg, #a8b56b 0%, #98a56b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f380f;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Login Page - Game Boy Style */
+.login-box {
+    background: #b4cc7f;
+    border: 8px solid #0f380f;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 
+        inset 0 0 0 4px #306230,
+        0 8px 0 #0f380f,
+        0 12px 30px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-box h1 {
+    color: #0f380f;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 0 #8bac0f;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-box label {
+    text-align: left;
+    font-weight: 600;
+    color: #0f380f;
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.login-box input {
+    padding: 12px;
+    border: 4px solid #306230;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background: #c4d68f;
+    color: #0f380f;
+    transition: border-color 0.3s;
+    margin-top: 8px;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-box input::placeholder {
+    color: #4a6a4a;
+    opacity: 0.7;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #0f380f;
+    background: #d4e69f;
+}
+
+.login-box button {
+    padding: 14px;
+    background: #306230;
+    color: #b4cc7f;
+    border: 4px solid #0f380f;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #0f380f;
+}
+
+.login-box button:hover {
+    background: #0f380f;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #0f380f;
+}
+
+.login-box button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* Game Container */
+.game-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    background: #b4cc7f;
+    border: 6px solid #0f380f;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 
+        inset 0 0 0 3px #306230,
+        0 6px 0 #0f380f,
+        0 10px 25px rgba(0, 0, 0, 0.5);
+    min-width: 250px;
+    max-width: 300px;
+    overflow: hidden;
+}
+
+.sidebar h2 {
+    color: #0f380f;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+    text-shadow: 1px 1px 0 #8bac0f;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.sidebar h3 {
+    color: #0f380f;
+    margin-bottom: 15px;
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 0 #8bac0f;
+    line-height: 1.5;
+}
+
+.player-info {
+    margin-bottom: 25px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.player-info p {
+    margin: 10px 0;
+    font-size: 0.6rem;
+    color: #0f380f;
+    line-height: 1.7;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.player-info span {
+    color: #306230;
+    font-weight: 700;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.next-piece {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#nextCanvas {
+    border: 4px solid #0f380f;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #a8b56b 0%, #98a56b 100%);
+    margin-top: 10px;
+    box-shadow: inset 0 0 0 2px #306230;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls ul {
+    list-style: none;
+    padding: 0;
+}
+
+.controls li {
+    margin: 8px 0;
+    font-size: 0.55rem;
+    color: #0f380f;
+    line-height: 1.6;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #306230;
+    color: #b4cc7f;
+    border: 4px solid #0f380f;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #0f380f;
+}
+
+.logout-btn:hover {
+    background: #0f380f;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #0f380f;
+}
+
+.logout-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* Game Area */
+.game-area {
+    position: relative;
+}
+
+#gameCanvas {
+    border: 8px solid #0f380f;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #a8b56b 0%, #98a56b 100%);
+    box-shadow: 
+        inset 0 0 0 4px #306230,
+        0 6px 0 #0f380f,
+        0 10px 20px rgba(0, 0, 0, 0.5);
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #b4cc7f;
+    border: 8px solid #0f380f;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 
+        inset 0 0 0 4px #306230,
+        0 8px 0 #0f380f,
+        0 12px 30px rgba(0, 0, 0, 0.6);
+    min-width: 250px;
+    z-index: 1000;
+}
+
+.game-over h2 {
+    color: #0f380f;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 0 #8bac0f;
+    line-height: 1.5;
+}
+
+.game-over p {
+    margin: 10px 0;
+    font-size: 0.8rem;
+    color: #0f380f;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    line-height: 1.6;
+}
+
+.game-over span {
+    color: #306230;
+    font-weight: 700;
+}
+
+#restartButton {
+    margin-top: 20px;
+    padding: 14px 30px;
+    background: #306230;
+    color: #b4cc7f;
+    border: 4px solid #0f380f;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #0f380f;
+}
+
+#restartButton:hover {
+    background: #0f380f;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #0f380f;
+}
+
+#restartButton:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.pause-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0f380f;
+    border: 8px solid #306230;
+    border-radius: 4px;
+    padding: 40px 60px;
+    text-align: center;
+    box-shadow: 
+        inset 0 0 0 4px #0f380f,
+        0 6px 0 #0f380f,
+        0 10px 20px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.pause-modal h2 {
+    color: #b4cc7f;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    text-shadow: 2px 2px 0 #306230;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+}
+
+.pause-modal p {
+    color: #98a56b;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.65rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Scores Table - Game Boy Style */
+.scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+}
+
+.scores-table th,
+.scores-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #306230;
+    font-size: 0.6rem;
+    line-height: 1.5;
+}
+
+.scores-table th {
+    background: #306230;
+    color: #b4cc7f;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #0f380f;
+}
+
+.scores-table tr:hover {
+    background: #8bac0f;
+}
+
+.scores-table td:first-child {
+    font-weight: 700;
+    color: #0f380f;
+}
+
+.scores-table td {
+    color: #0f380f;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    max-width: 150px;
+}

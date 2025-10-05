@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра Tetris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <div class="login-box">
+            <h1>Игра Tetris</h1>
+            <form id="loginForm">
+                <label for="username">
+                    Введите имя:<br>
+                    <input type="text" id="username" placeholder="Имя пользователя" required maxlength="15">
+                </label>
+                <button type="submit">Вход</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container hidden" id="gameContainer">
+        <div class="game-wrapper">
+            <div class="sidebar">
+                <h2>Игра Tetris</h2>
+                <div class="player-info">
+                    <p><strong>Игрок:</strong> <span id="playerName"></span></p>
+                    <p><strong>Текущий уровень:</strong> <span id="level">1</span></p>
+                    <p><strong>Очки:</strong> <span id="score">0</span></p>
+                    <p><strong>Линий:</strong> <span id="lines">0</span></p>
+                </div>
+
+                <div class="next-piece">
+                    <h3>Следующая фигура</h3>
+                    <canvas id="nextCanvas" width="120" height="120"></canvas>
+                </div>
+
+                <div class="controls">
+                    <h3>Клавиши для управления:</h3>
+                    <ul>
+                        <li><strong>Стрелка влево</strong> - перемещение фигуры влево</li>
+                        <li><strong>Стрелка вправо</strong> - перемещение фигуры вправо</li>
+                        <li><strong>Стрелка вниз</strong> - ускорить падение</li>
+                        <li><strong>Стрелка вверх</strong> - "уронить" фигуру</li>
+                        <li><strong>Пробел</strong> - повернуть фигуру</li>
+                        <li><strong>P / Esc</strong> - пауза</li>
+                    </ul>
+                </div>
+
+                <button id="logoutButton" class="logout-btn">Выход</button>
+            </div>
+
+            <div class="game-area">
+                <canvas id="gameCanvas" width="300" height="600"></canvas>
+                <div id="gameOver" class="game-over hidden">
+                    <h2>Игра окончена!</h2>
+                    <p>Ваш счёт: <span id="finalScore">0</span></p>
+                    <p>Линий: <span id="finalLines">0</span></p>
+                    <button id="restartButton">Начать заново</button>
+                </div>
+                <div id="pauseModal" class="pause-modal hidden">
+                    <h2>ПАУЗА</h2>
+                    <p>Нажмите P или Escape для продолжения</p>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>Таблица рекордов</h3>
+                <table id="scoresTable" class="scores-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Игрок</th>
+                            <th>Очки</th>
+                            <th>Линий</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scoresBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="dist/game.js"></script>
+</body>
+</html>
+
