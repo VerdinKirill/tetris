@@ -144,10 +144,10 @@ tetris/
 
 ## Демонстрация игры
 
-[!Форма логина в игру](https://github.com/VerdinKirill/tetris/raw/{main}/examples/loginForm.png)
-[!Процесс игры](https://github.com/VerdinKirill/tetris/raw/{main}/examples/game.png)
-[!Пауза](https://github.com/VerdinKirill/tetris/raw/{main}/examples/pause.png)
-[!Игра окончена](https://github.com/VerdinKirill/tetris/raw/{main}/examples/gameover.png)
+[!Форма логина в игру](https://github.com/VerdinKirill/tetris/raw/main/examples/loginForm.png)
+[!Процесс игры](https://github.com/VerdinKirill/tetris/raw/main/examples/game.png)
+[!Пауза](https://github.com/VerdinKirill/tetris/raw/main/examples/pause.png)
+[!Игра окончена](https://github.com/VerdinKirill/tetris/raw/main/examples/gameover.png)
 
 ## Автор
 
